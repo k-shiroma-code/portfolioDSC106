@@ -2,7 +2,7 @@
 
 Welcome! This repository contains my personal portfolio built with GitHub Pages and Jekyll.  
 
-You can view the live portfolio here: [k-shiroma-code.github.io]([https://k-shiroma-code.github.io](https://k-shiroma-code.github.io/portfolioDSC106/))
+You can view the live portfolio here: https://k-shiroma-code.github.io/portfolioDSC106/
 
 ## Structure
 
