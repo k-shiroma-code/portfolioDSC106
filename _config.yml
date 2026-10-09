@@ -5,8 +5,8 @@ github: https://github.com/k-shiroma-code
 linkedin: https://www.linkedin.com/in/k-shiroma
 email: kyleshiroma77@gmail.com
 show_downloads: true
-url: "https://k-shiroma-code.github.io/portfolioDSC106"
-baseurl: ""
+url: "https://k-shiroma-code.github.io/"
+baseurl: "/portfolioDSC106"
 
 # Build settings
 markdown: kramdown
