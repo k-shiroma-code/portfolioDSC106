@@ -137,7 +137,7 @@ permalink: /projects/
 }
 
 .page-header h1 {
-  font-size: 2.75rem;
+  font-size: 4rem;
   font-weight: 700;
   margin: 0;
   color: var(--text-primary);
@@ -625,6 +625,59 @@ permalink: /projects/
   .tl-card { flex: 0 0 170px; min-height: 130px; }
   .kbd-hint { display: none; }
 }
+/* ═══ ALL PROJECTS GRID (Lab 2, Step 4) ═══ */
+.overview-title {
+  font-size: 1.5rem;
+  margin: 56px 0 20px;
+  text-align: center;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1em;
+}
+
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  gap: 0.5em;
+  padding: 20px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--surface-border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.projects article:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.projects h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  text-align: left;
+  color: var(--text-primary);
+}
+
+.projects .proj-meta {
+  margin: 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-soft);
+  font-weight: 600;
+}
+
+.projects p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
 </style>
 
 <div class="grid-dots"></div>
@@ -1110,6 +1163,48 @@ permalink: /projects/
   </div>
 </article>
 
+<!-- ═══ ALL PROJECTS GRID (Lab 2, Step 4) ═══ -->
+<section class="projects-overview">
+<h2 class="overview-title">All Projects</h2>
+<div class="projects">
+<article>
+<h2>Global Energy Dashboard</h2>
+<p class="proj-meta">⚡ Jan 2026 — Present</p>
+<p>Interactive dashboard on EV adoption vs. oil import dependencies, built for the UCSD Center for Energy Research.</p>
+</article>
+<article>
+<h2>Grid Load Forecasting</h2>
+<p class="proj-meta">🔌 2025</p>
+<p>14-day California electricity demand forecasts across 4 utilities, with 2.26% MAPE.</p>
+</article>
+<article>
+<h2>EvoCharge</h2>
+<p class="proj-meta">🔋 2025</p>
+<p>EV charging energy and cost predictor using 16,455 California stations.</p>
+</article>
+<article>
+<h2>Pulsepanion</h2>
+<p class="proj-meta">🏆 2025 · Ai4Purpose</p>
+<p>1st place AI healthcare tool turning 18 months of patient data into caregiver insights.</p>
+</article>
+<article>
+<h2>Customer Segmentation</h2>
+<p class="proj-meta">📊 2024</p>
+<p>RFM analysis on 500K+ retail transactions, uncovering 5 customer segments.</p>
+</article>
+<article>
+<h2>Heart Disease Prediction</h2>
+<p class="proj-meta">❤️ 2024</p>
+<p>ML pipeline using SMOTE for a 20% boost in minority-class recall.</p>
+</article>
+<article>
+<h2>UEFA Euro 2024 Analytics</h2>
+<p class="proj-meta">⚽ 2024 · CSUF REU</p>
+<p>Match outcome prediction combining ELO ratings with XGBoost and Random Forests.</p>
+</article>
+</div>
+</section>
+
 </div>
 
 <!-- ═══ TIMELINE NAV LOGIC ═══ -->
@@ -1177,4 +1272,17 @@ permalink: /projects/
   // initial state — show newest (index 0)
   activate(0);
 })();
+</script>
+
+<!-- ═══ GRID CARD → TIMELINE ═══ -->
+<script>
+document.querySelectorAll('.projects article').forEach(function(card, i) {
+  card.addEventListener('click', function() {
+    var tlCards = document.querySelectorAll('.tl-card');
+    if (tlCards[i]) {
+      tlCards[i].click();
+      document.querySelector('.timeline-wrap').scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
 </script>
