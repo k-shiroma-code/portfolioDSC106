@@ -8,16 +8,9 @@ permalink: /
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 .home-container {
-  --accent: #a78bfa;
-  --accent-soft: #c4b5fd;
-  --accent-dim: rgba(167, 139, 250, 0.08);
-  --surface: #0a0a0a;
-  --surface-elevated: #111111;
-  --surface-border: #1e1e1e;
-  --surface-border-hover: #2a2a2a;
-  --text-primary: #ececec;
-  --text-secondary: #b0b0b0;
-  --text-muted: #707070;
+  /* Colors come from _layouts/default.html so they follow the Lab 3 theme switch */
+  --accent-dim: color-mix(in srgb, var(--accent) 8%, transparent);
+  --surface-border-hover: color-mix(in srgb, var(--text-primary) 18%, var(--surface));
   font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text-primary);
   line-height: 1.6;

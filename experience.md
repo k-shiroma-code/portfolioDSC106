@@ -1,20 +1,13 @@
 ---
-title: Resume
+title: Experience
 layout: default
-permalink: /resume/
+permalink: /experience/
 ---
 
 <style>
 /* ═══ RESUME PAGE (Lab 2, Step 5) — matches Experience page styling ═══ */
 .resume-container {
-  --accent: #a78bfa;
-  --accent-soft: #c4b5fd;
-  --surface: #0a0a0a;
-  --surface-elevated: #141414;
-  --surface-border: #222;
-  --text-primary: #f5f5f5;
-  --text-secondary: #a0a0a0;
-  --text-muted: #666;
+  /* Colors come from _layouts/default.html so they follow the Lab 3 theme switch */
   font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text-primary);
   line-height: 1.7;
@@ -144,14 +137,14 @@ permalink: /resume/
 .resume-btn:hover {
   background: var(--accent);
   border-color: var(--accent);
-  color: #0a0a0a;
+  color: var(--on-accent);
   text-decoration: none;
 }
 
 .resume-btn.primary {
   background: var(--accent);
   border-color: var(--accent);
-  color: #0a0a0a;
+  color: var(--on-accent);
 }
 
 .resume-btn.primary:hover {
