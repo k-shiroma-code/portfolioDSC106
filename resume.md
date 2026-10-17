@@ -5,12 +5,9 @@ permalink: /resume/
 ---
 
 <style>
-/* ═══ RESUME PAGE — uses the theme variables from style.css,
+/* ═══ RESUME PAGE — uses the theme variables from _layouts/default.html,
        so it follows the Lab 3 Light / Dark / Automatic switch ═══ */
 .resume-container {
-  --accent-soft: var(--accent-hover);
-  --surface-elevated: var(--surface);
-  --text-primary: var(--primary-text);
   font-family: inherit;
   color: var(--text-primary);
   line-height: 1.7;
@@ -30,7 +27,7 @@ permalink: /resume/
 .grid-dots {
   position: fixed; top: 0; left: 0; width: 100%; height: 100%;
   pointer-events: none; z-index: 0;
-  background-image: radial-gradient(circle, rgba(26, 60, 122, 0.15) 1px, transparent 1px);
+  background-image: radial-gradient(circle, color-mix(in srgb, var(--accent) 15%, transparent) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
@@ -38,8 +35,8 @@ permalink: /resume/
   position: fixed; top: 0; left: 0; width: 100%; height: 100%;
   pointer-events: none; z-index: 0;
   background-image:
-    linear-gradient(rgba(26, 60, 122, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(26, 60, 122, 0.05) 1px, transparent 1px);
+    linear-gradient(color-mix(in srgb, var(--accent) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 5%, transparent) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
@@ -53,16 +50,16 @@ permalink: /resume/
 .pulse-h {
   height: 2px; left: 0; width: 100%;
   background: linear-gradient(90deg, transparent 0%, transparent 30%,
-    rgba(26, 60, 122, 0.3) 45%, rgba(47, 90, 168, 0.6) 50%,
-    rgba(26, 60, 122, 0.3) 55%, transparent 70%, transparent 100%);
+    color-mix(in srgb, var(--accent) 30%, transparent) 45%, color-mix(in srgb, var(--accent-soft) 60%, transparent) 50%,
+    color-mix(in srgb, var(--accent) 30%, transparent) 55%, transparent 70%, transparent 100%);
   background-size: 200% 100%;
 }
 
 .pulse-v {
   width: 2px; top: 0; height: 100%;
   background: linear-gradient(180deg, transparent 0%, transparent 30%,
-    rgba(26, 60, 122, 0.3) 45%, rgba(47, 90, 168, 0.6) 50%,
-    rgba(26, 60, 122, 0.3) 55%, transparent 70%, transparent 100%);
+    color-mix(in srgb, var(--accent) 30%, transparent) 45%, color-mix(in srgb, var(--accent-soft) 60%, transparent) 50%,
+    color-mix(in srgb, var(--accent) 30%, transparent) 55%, transparent 70%, transparent 100%);
   background-size: 100% 200%;
 }
 
@@ -83,15 +80,15 @@ permalink: /resume/
 
 .grid-node {
   position: fixed; width: 6px; height: 6px; border-radius: 50%;
-  background: #1A3C7A; pointer-events: none; z-index: 0; opacity: 0;
+  background: var(--accent); pointer-events: none; z-index: 0; opacity: 0;
 }
 
 .grid-node.flash { animation: nodeFlash 1.2s ease-out forwards; }
 
 @keyframes nodeFlash {
-  0% { opacity: 0; transform: scale(0.5); box-shadow: 0 0 0 0 rgba(26, 60, 122, 0); }
-  20% { opacity: 1; transform: scale(2); box-shadow: 0 0 16px 6px rgba(26, 60, 122, 0.3); }
-  100% { opacity: 0; transform: scale(0.5); box-shadow: 0 0 0 0 rgba(26, 60, 122, 0); }
+  0% { opacity: 0; transform: scale(0.5); box-shadow: 0 0 0 0 transparent; }
+  20% { opacity: 1; transform: scale(2); box-shadow: 0 0 16px 6px color-mix(in srgb, var(--accent) 30%, transparent); }
+  100% { opacity: 0; transform: scale(0.5); box-shadow: 0 0 0 0 transparent; }
 }
 
 /* ═══ PAGE HEADER ═══ */
@@ -140,20 +137,20 @@ permalink: /resume/
 .resume-btn:hover {
   background: var(--accent);
   border-color: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   text-decoration: none;
 }
 
 .resume-btn.primary {
   background: var(--accent);
   border-color: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 .resume-btn.primary:hover {
   background: var(--accent-soft);
   border-color: var(--accent-soft);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 /* ═══ SECTIONS ═══ */
@@ -198,7 +195,7 @@ permalink: /resume/
 .resume-card:hover {
   border-color: var(--accent);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(26, 60, 122, 0.1);
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--accent) 10%, transparent);
 }
 
 .resume-card-header {
@@ -267,8 +264,8 @@ permalink: /resume/
 }
 
 .tech-tag {
-  background: rgba(26, 60, 122, 0.07);
-  border: 1px solid rgba(26, 60, 122, 0.2);
+  background: color-mix(in srgb, var(--accent) 7%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
   color: var(--accent);
   font-size: 0.8rem;
   font-weight: 500;

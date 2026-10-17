@@ -6,42 +6,55 @@
   <meta name="description" content="Kyle Shiroma - Data Scientist & Machine Learning Engineer Portfolio">
   <meta name="author" content="Kyle Shiroma">
   <title>{{ page.title }} | {{ site.title }}</title>
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  
+
+  <!-- Lab 3: nav menu + dark mode switch -->
+  <script type="module" src="{{ '/global.js' | relative_url }}"></script>
+
   <style>
     /* ========================================
-       CSS Variables & Base Styles
+       Lab 3, Step 4.1: Color scheme
+       light-dark(LIGHT, DARK) — the second value is the original dark theme.
     ======================================== */
+    html {
+      color-scheme: light dark;
+      scroll-behavior: smooth;
+    }
+
     :root {
-      --accent: #a78bfa;
-      --accent-soft: #c4b5fd;
-      --accent-glow: rgba(167, 139, 250, 0.15);
-      --surface: #0a0a0a;
-      --surface-elevated: #141414;
-      --surface-border: #222;
-      --surface-hover: #1a1a1a;
-      --text-primary: #f5f5f5;
-      --text-secondary: #a0a0a0;
-      --text-muted: #666;
+      --accent: light-dark(#6D4FD8, #a78bfa);
+      --accent-soft: light-dark(#8B6FF0, #c4b5fd);
+      --accent-glow: light-dark(rgba(109, 79, 216, 0.12), rgba(167, 139, 250, 0.15));
+      --on-accent: light-dark(#ffffff, #0a0a0a);
+      --surface: light-dark(#fafafa, #0a0a0a);
+      --surface-elevated: light-dark(#ffffff, #141414);
+      --surface-border: light-dark(#e4e4e7, #222);
+      --surface-hover: light-dark(#f4f4f5, #1a1a1a);
+      --text-primary: light-dark(#18181b, #f5f5f5);
+      --text-secondary: light-dark(#52525b, #a0a0a0);
+      --text-muted: light-dark(#71717a, #666);
       --font-serif: 'Instrument Serif', Georgia, serif;
       --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      /* Make the older style.css variables follow the theme too */
+      --primary-text: var(--text-primary);
+      --bg: var(--surface);
+      --bg-alt: var(--surface-elevated);
+      --border-color: var(--surface-border);
+      --accent-hover: var(--accent-soft);
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
 
     body {
@@ -57,6 +70,22 @@
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    /* ========================================
+       Lab 3, Step 4.3: Theme switcher
+    ======================================== */
+    .color-scheme {
+      position: absolute;
+      top: 5.5rem;
+      right: 1rem;
+      font-size: 80%;
+      color: var(--text-secondary);
+      z-index: 50;
+    }
+
+    select {
+      font: inherit;
     }
 
     /* ========================================
@@ -76,7 +105,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(10, 10, 10, 0.85);
+      background: color-mix(in srgb, var(--surface) 85%, transparent);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--surface-border);
@@ -106,7 +135,7 @@
     }
 
     /* ========================================
-       Navigation
+       Navigation (built by global.js)
     ======================================== */
     .main-navigation {
       display: flex;
@@ -142,11 +171,14 @@
       width: 100%;
     }
 
+    /* Current page (Lab 3 adds the "current" class) */
+    .main-navigation a.current,
     .main-navigation a[aria-current="page"],
     .main-navigation a.active {
       color: var(--accent);
     }
 
+    .main-navigation a.current::after,
     .main-navigation a[aria-current="page"]::after,
     .main-navigation a.active::after {
       width: 100%;
@@ -155,7 +187,7 @@
     /* Resume Button */
     .nav-button {
       background: var(--accent);
-      color: #0a0a0a !important;
+      color: var(--on-accent) !important;
       font-weight: 600;
       padding: 0.6rem 1.25rem !important;
       border-radius: 8px;
@@ -254,6 +286,10 @@
         font-size: 1.25rem;
       }
 
+      .color-scheme {
+        top: 4.75rem;
+      }
+
       .mobile-menu-toggle {
         display: flex;
         align-items: center;
@@ -269,7 +305,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(10, 10, 10, 0.98);
+        background: color-mix(in srgb, var(--surface) 98%, transparent);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         flex-direction: column;
@@ -360,27 +396,18 @@
         <h1 class="site-title">
           <a href="{{ '/' | relative_url }}" aria-label="Home">{{ site.title }}</a>
         </h1>
-        
+
         <!-- Mobile Menu Toggle -->
         <button class="mobile-menu-toggle" aria-expanded="false" aria-label="Toggle navigation menu">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" 
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
           </svg>
         </button>
-        
-        <nav role="navigation" class="main-navigation" aria-label="Main navigation">
-          <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>About Me</a>
-          <a href="{{ '/experience/' | relative_url }}" {% if page.url == '/experience/' %}aria-current="page"{% endif %}>Experience</a>
-          <a href="{{ '/projects/' | relative_url }}" {% if page.url == '/projects/' %}aria-current="page"{% endif %}>Projects</a>
-          <a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}aria-current="page"{% endif %}>Contact</a>
-          <a class="nav-button" href="{{ '/resume/' | relative_url }}">Resume</a>
 
-          </a>
-          </a>
-        </nav>
+        <!-- Lab 3: the <nav> menu is now added here by global.js -->
       </div>
     </div>
   </header>
@@ -397,7 +424,7 @@
     <div class="container">
       <div class="footer-content">
         <p class="footer-copyright">© {{ site.time | date: '%Y' }} Kyle Shiroma. All rights reserved.</p>
-        
+
         <div class="footer-links">
           <a href="https://github.com/k-shiroma-code" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -424,7 +451,7 @@
   </footer>
 
   <!-- Mobile Menu Script -->
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
       const mobileToggle = document.querySelector('.mobile-menu-toggle');
       const navigation = document.querySelector('.main-navigation');
@@ -436,7 +463,7 @@
           <line x1="3" y1="12" x2="21" y2="12"></line>
           <line x1="3" y1="18" x2="21" y2="18"></line>
         `;
-        
+
         const closeIcon = `
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -470,8 +497,8 @@
 
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
-          if (navigation.classList.contains('is-open') && 
-              !navigation.contains(e.target) && 
+          if (navigation.classList.contains('is-open') &&
+              !navigation.contains(e.target) &&
               !mobileToggle.contains(e.target)) {
             closeMenu();
           }
