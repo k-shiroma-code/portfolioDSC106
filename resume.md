@@ -6,22 +6,20 @@ permalink: /resume/
 
 <style>
 .resume {
-  /* Colors derived from the current color scheme (canvas = background, canvastext = text),
-     so they adapt automatically to Light / Dark / Automatic from the theme switcher */
-  --text-strong: canvastext;
-  --text-body: color-mix(in oklch, canvastext 85%, canvas);
-  --text-muted: color-mix(in oklch, canvastext 60%, canvas);
-  --border-color: oklch(50% 10% 200 / 40%);
+  /* Built from the site's own variables in style.css, so the resume matches every other page */
+  --text-strong: var(--primary-text);
+  --text-body: color-mix(in oklch, var(--primary-text) 85%, var(--bg));
+  --text-muted: color-mix(in oklch, var(--primary-text) 60%, var(--bg));
 
   max-width: 760px;
   margin: 0 auto;
   padding: 32px 0 48px;
-  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: inherit;
   color: var(--text-strong);
   line-height: 1.6;
 }
 .resume h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1.1;
   margin: 0 0 8px;
@@ -35,18 +33,18 @@ permalink: /resume/
   text-align: left;
 }
 .resume .contact a {
-  color: var(--text-muted);
-  text-decoration: underline;
+  color: var(--accent);
 }
 .resume .contact a:hover {
-  color: var(--text-strong);
+  color: var(--accent-hover);
+  text-decoration: underline;
 }
 .resume h2 {
   font-size: 1.1rem;
   font-weight: 600;
   margin: 40px 0 16px;
   padding-bottom: 6px;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 2px solid var(--accent);
   text-align: left;
   color: var(--text-strong);
 }
