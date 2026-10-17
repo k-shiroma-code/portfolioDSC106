@@ -17,7 +17,7 @@ let pages = [
 
 // Site lives at https://k-shiroma-code.github.io/portfolioDSC106/
 // `jekyll serve` also uses /portfolioDSC106/ locally (from baseurl in _config.yml)
-const BASE_PATH =
+const BASE_PATH = 'https://k-shiroma-code.github.io/portfolioDSC106/';
   location.hostname === 'localhost' || location.hostname === '127.0.0.1'
     ? '/portfolioDSC106/' // Local Jekyll server
     : '/portfolioDSC106/'; // GitHub Pages repo name
