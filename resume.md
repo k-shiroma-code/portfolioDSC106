@@ -6,11 +6,18 @@ permalink: /resume/
 
 <style>
 .resume {
+  /* Colors derived from the current color scheme (canvas = background, canvastext = text),
+     so they adapt automatically to Light / Dark / Automatic from the theme switcher */
+  --text-strong: canvastext;
+  --text-body: color-mix(in oklch, canvastext 85%, canvas);
+  --text-muted: color-mix(in oklch, canvastext 60%, canvas);
+  --border-color: oklch(50% 10% 200 / 40%);
+
   max-width: 760px;
   margin: 0 auto;
   padding: 32px 0 48px;
   font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
-  color: #f5f5f5;
+  color: var(--text-strong);
   line-height: 1.6;
 }
 .resume h1 {
@@ -19,40 +26,40 @@ permalink: /resume/
   line-height: 1.1;
   margin: 0 0 8px;
   text-align: left;
-  color: #f5f5f5;
+  color: var(--text-strong);
 }
 .resume .contact {
   margin: 0;
-  color: #a0a0a0;
+  color: var(--text-muted);
   font-size: 0.95rem;
   text-align: left;
 }
 .resume .contact a {
-  color: #a0a0a0;
+  color: var(--text-muted);
   text-decoration: underline;
 }
 .resume .contact a:hover {
-  color: #f5f5f5;
+  color: var(--text-strong);
 }
 .resume h2 {
   font-size: 1.1rem;
   font-weight: 600;
   margin: 40px 0 16px;
   padding-bottom: 6px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--border-color);
   text-align: left;
-  color: #f5f5f5;
+  color: var(--text-strong);
 }
 .resume h3 {
   font-size: 1rem;
   font-weight: 600;
   margin: 20px 0 2px;
   text-align: left;
-  color: #f5f5f5;
+  color: var(--text-strong);
 }
 .resume .meta {
   margin: 0 0 6px;
-  color: #a0a0a0;
+  color: var(--text-muted);
   font-size: 0.9rem;
   text-align: left;
 }
@@ -61,7 +68,7 @@ permalink: /resume/
   padding-left: 20px;
 }
 .resume li {
-  color: #d4d4d4;
+  color: var(--text-body);
   margin-bottom: 4px;
 }
 .resume p {
