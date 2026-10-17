@@ -15,12 +15,12 @@ let pages = [
   { url: 'resume/', title: 'Resume', className: 'nav-button' },
 ];
 
-// Site at https://k-shiroma-code.github.io/        -> '/'
-// Site at https://k-shiroma-code.github.io/REPO/   -> '/REPO/'
+// Site lives at https://k-shiroma-code.github.io/portfolioDSC106/
+// `jekyll serve` also uses /portfolioDSC106/ locally (from baseurl in _config.yml)
 const BASE_PATH =
   location.hostname === 'localhost' || location.hostname === '127.0.0.1'
-    ? '/' // Local server
-    : '/'; // GitHub Pages (change to '/your-repo-name/' if your URL has one)
+    ? '/portfolioDSC106/' // Local Jekyll server
+    : '/portfolioDSC106/'; // GitHub Pages repo name
 
 let nav = document.createElement('nav');
 nav.className = 'main-navigation';
