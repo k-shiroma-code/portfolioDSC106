@@ -1112,6 +1112,20 @@ permalink: /projects/
 <!-- ═══ ALL PROJECTS GRID (Lab 2, Step 4) ═══ -->
 <section class="projects-overview">
 <h2 class="overview-title">All Projects</h2>
+
+<!-- ═══ Lab 5: projects-per-year pie chart + legend (drawn by projects.js with D3) ═══ -->
+<div class="pie-container">
+  <svg id="projects-pie-plot" viewBox="-50 -50 100 100" role="group" aria-label="Projects per year — select a year to filter"></svg>
+  <ul class="legend"></ul>
+</div>
+
+<input
+  class="searchBar"
+  type="search"
+  aria-label="Search projects"
+  placeholder="🔍 Search projects…"
+/>
+
 <div class="projects">
   <!-- Lab 4: articles are rendered by projects/projects.js from lib/projects.json -->
 </div>

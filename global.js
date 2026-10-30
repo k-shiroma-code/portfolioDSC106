@@ -131,7 +131,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
   containerElement.innerHTML = '';
 
   if (!Array.isArray(projects) || projects.length === 0) {
-    containerElement.innerHTML = '<p class="projects-empty">No projects to show yet.</p>';
+    containerElement.innerHTML = '<p class="projects-empty">No projects found.</p>';
     return;
   }
 
@@ -140,10 +140,14 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     const title = project.title ?? 'Untitled project';
     const image = project.image || 'https://dsc106.com/labs/lab02/images/empty.svg';
 
+    // Lab 5, Step 0.1: description + year share one grid cell, so they're wrapped in a <div>
     article.innerHTML = `
       <${headingLevel}>${title}</${headingLevel}>
       <img src="${image}" alt="${title}">
-      <p>${project.description ?? ''}</p>
+      <div>
+        <p>${project.description ?? ''}</p>
+        ${project.year ? `<p class="project-year">c. ${project.year}</p>` : ''}
+      </div>
     `;
     containerElement.appendChild(article);
   }
