@@ -381,8 +381,55 @@ permalink: /
   100% { opacity: 0; transform: scale(0.5); box-shadow: 0 0 0 0 rgba(167, 139, 250, 0); }
 }
 
+/* ═══ LATEST PROJECTS + GITHUB STATS (Lab 4) ═══ */
+.latest-section,
+.github-section {
+  margin: 0 0 60px;
+}
+
+.latest-section .see-all {
+  display: block;
+  margin-top: 16px;
+  text-align: right;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+/* Four equal columns: every <dt> on row 1, every <dd> on row 2 */
+#profile-stats dl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px 16px;
+  margin: 0;
+  padding: 24px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--surface-border);
+  border-radius: 12px;
+  text-align: center;
+}
+
+#profile-stats dt {
+  grid-row: 1;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+#profile-stats dd {
+  grid-row: 2;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+  #profile-stats dl { padding: 16px 8px; gap: 4px 8px; }
+  #profile-stats dt { font-size: 0.62rem; }
+  #profile-stats dd { font-size: 1.5rem; }
   .home-container { padding: 0 20px; }
   .hero-section { padding: 36px 0 28px; }
   .grid-dots, .grid-lines, .grid-bg { display: none; }
@@ -521,6 +568,23 @@ permalink: /
 
   </div>
 </section>
+
+<!-- ═══ Lab 4, Step 2: latest 3 projects (rendered by index.js) ═══ -->
+<section class="latest-section">
+  <h2 class="section-header">Latest Projects</h2>
+  <div class="projects">
+    <!-- Dynamically added content will appear here -->
+  </div>
+  <a class="see-all" href="{{ '/projects/' | relative_url }}">See all projects →</a>
+</section>
+
+<!-- ═══ Lab 4, Step 3: GitHub profile stats (filled in by index.js) ═══ -->
+<section class="github-section">
+  <h2 class="section-header">My GitHub Stats</h2>
+  <div id="profile-stats"></div>
+</section>
+
+<script type="module" src="{{ '/index.js' | relative_url }}"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

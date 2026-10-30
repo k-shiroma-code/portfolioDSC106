@@ -1,0 +1,81 @@
+[
+  {
+    "id": "proj-energy-ds3",
+    "title": "Global Energy Dashboard",
+    "year": "2026",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Interactive dashboard on EV adoption vs. oil import dependencies, built for the UCSD Center for Energy Research."
+  },
+  {
+    "title": "Abortion Clinic Access by State",
+    "year": "2026",
+    "image": "/portfolioDSC106/assets/img/dsc106-project2.png",
+    "description": "DSC 106 Project 2: mapping which states gained and lost abortion clinics, using Guttmacher Institute data."
+  },
+  {
+    "title": "Protein vs. Sodium in Groceries",
+    "year": "2026",
+    "image": "/portfolioDSC106/assets/img/dsc106-project1.png",
+    "description": "DSC 106 Project 1: a visualization showing that processed protein isn't cheaper, it just comes with more salt."
+  },
+  {
+    "title": "DSC 106 Portfolio Site",
+    "year": "2026",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "This site: a Jekyll portfolio with a JavaScript-built nav, a light/dark theme switch, and projects loaded from JSON."
+  },
+  {
+    "title": "K–12 AI Education Tools",
+    "year": "2026",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Hands-on, AI-driven educational tools for K–12 outreach, built as an HDSI Lab 3.0 Fellow."
+  },
+  {
+    "title": "AI Agent Project",
+    "year": "2026",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "In planning: an AI agent exploring tool use, long-horizon task planning, and human-in-the-loop interaction."
+  },
+  {
+    "id": "proj-grid-load",
+    "title": "Grid Load Forecasting",
+    "year": "2025",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "14-day California electricity demand forecasts across 4 utilities, with 2.26% MAPE."
+  },
+  {
+    "id": "proj-evocharge",
+    "title": "EvoCharge",
+    "year": "2025",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "EV charging energy and cost predictor using 16,455 California stations."
+  },
+  {
+    "id": "proj-pulsepanion",
+    "title": "Pulsepanion",
+    "year": "2025",
+    "image": "/portfolioDSC106/assets/img/Pulsepantion.jpg",
+    "description": "1st place AI healthcare tool turning 18 months of patient data into caregiver insights."
+  },
+  {
+    "id": "proj-segmentation",
+    "title": "Customer Segmentation",
+    "year": "2024",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "RFM analysis on 500K+ retail transactions, uncovering 5 customer segments."
+  },
+  {
+    "id": "proj-heart",
+    "title": "Heart Disease Prediction",
+    "year": "2024",
+    "image": "/portfolioDSC106/assets/img/Feature_Importance.jpg",
+    "description": "ML pipeline using SMOTE for a 20% boost in minority-class recall."
+  },
+  {
+    "id": "proj-uefa",
+    "title": "UEFA Euro 2024 Analytics",
+    "year": "2024",
+    "image": "/portfolioDSC106/assets/img/IMG_1670.jpg",
+    "description": "Match outcome prediction combining ELO ratings with XGBoost and Random Forests."
+  }
+]

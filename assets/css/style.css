@@ -211,3 +211,63 @@ footer p {
     padding: 0.75rem 1.25rem;
   }
 }
+
+/* ----------------------------
+   Project cards (Lab 2 grid, rendered from lib/projects.json in Lab 4)
+   Used on both the Projects page and the Home page
+-----------------------------*/
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1em;
+}
+
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  gap: 0.5em;
+  padding: 20px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--surface-border);
+  border-radius: 12px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.projects article:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.projects article.has-details {
+  cursor: pointer;
+}
+
+.projects h2,
+.projects h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  text-align: left;
+  color: var(--text-primary);
+}
+
+.projects img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin: 0;
+  border-radius: 8px;
+  background: var(--surface-hover);
+}
+
+.projects p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.projects .projects-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+}
