@@ -11,6 +11,7 @@ let pages = [
   { url: 'experience/', title: 'Experience' },
   { url: 'projects/', title: 'Projects' },
   { url: 'contact/', title: 'Contact' },
+  { url: 'meta/', title: 'Meta' },
   { url: 'https://github.com/k-shiroma-code', title: 'GitHub' },
   { url: 'resume/', title: 'Resume', className: 'nav-button' },
 ];

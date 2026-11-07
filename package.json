@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "loc": "elocuent -i \"{*,{_layouts,assets,lib,meta,projects}/**/*}.{html,css,js,md}\" -o meta/loc.csv --spaces 2"
+  },
+  "devDependencies": {
+    "elocuent": "^0.0.4"
+  }
+}
