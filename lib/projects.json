@@ -1,10 +1,18 @@
 [
   {
+    "title": "Bikewatching",
+    "year": "2026",
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "url": "https://k-shiroma-code.github.io/bikewatching/",
+    "description": "DSC 106 Lab 7: an interactive Mapbox + D3 map of Bluebikes traffic in Boston, filterable by time of day."
+  },
+  {
     "id": "proj-energy-ds3",
     "title": "Global Energy Dashboard",
     "year": "2026",
     "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-    "description": "Interactive dashboard on EV adoption vs. oil import dependencies, built for the UCSD Center for Energy Research."
+    "description": "Interactive dashboard on EV adoption vs. oil import dependencies, built for the UCSD Center for Energy Research.",
+    "url": "https://k-shiroma-code.github.io/Energy-Dashboard-DS3/index.html"
   },
   {
     "title": "Abortion Clinic Access by State",
@@ -22,7 +30,8 @@
     "title": "DSC 106 Portfolio Site",
     "year": "2026",
     "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-    "description": "This site: a Jekyll portfolio with a JavaScript-built nav, a light/dark theme switch, and projects loaded from JSON."
+    "description": "This site: a Jekyll portfolio with a JavaScript-built nav, a light/dark theme switch, and projects loaded from JSON.",
+    "url": "https://github.com/k-shiroma-code/portfolioDSC106"
   },
   {
     "title": "K–12 AI Education Tools",
@@ -41,41 +50,47 @@
     "title": "Grid Load Forecasting",
     "year": "2025",
     "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-    "description": "14-day California electricity demand forecasts across 4 utilities, with 2.26% MAPE."
+    "description": "14-day California electricity demand forecasts across 4 utilities, with 2.26% MAPE.",
+    "url": "https://github.com/k-shiroma-code/Weather-API-Project"
   },
   {
     "id": "proj-evocharge",
     "title": "EvoCharge",
     "year": "2025",
     "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-    "description": "EV charging energy and cost predictor using 16,455 California stations."
+    "description": "EV charging energy and cost predictor using 16,455 California stations.",
+    "url": "https://evocharge.streamlit.app"
   },
   {
     "id": "proj-pulsepanion",
     "title": "Pulsepanion",
     "year": "2025",
     "image": "/portfolioDSC106/assets/img/Pulsepantion.jpg",
-    "description": "1st place AI healthcare tool turning 18 months of patient data into caregiver insights."
+    "description": "1st place AI healthcare tool turning 18 months of patient data into caregiver insights.",
+    "url": "https://github.com/k-shiroma-code/NCHacks-Pulsepanion"
   },
   {
     "id": "proj-segmentation",
     "title": "Customer Segmentation",
     "year": "2024",
     "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-    "description": "RFM analysis on 500K+ retail transactions, uncovering 5 customer segments."
+    "description": "RFM analysis on 500K+ retail transactions, uncovering 5 customer segments.",
+    "url": "https://github.com/k-shiroma-code/Customer-Segmentation-with-RFM-Analysis"
   },
   {
     "id": "proj-heart",
     "title": "Heart Disease Prediction",
     "year": "2024",
     "image": "/portfolioDSC106/assets/img/Feature_Importance.jpg",
-    "description": "ML pipeline using SMOTE for a 20% boost in minority-class recall."
+    "description": "ML pipeline using SMOTE for a 20% boost in minority-class recall.",
+    "url": "https://github.com/k-shiroma-code/Heart-Disease-ML-Project"
   },
   {
     "id": "proj-uefa",
     "title": "UEFA Euro 2024 Analytics",
     "year": "2024",
     "image": "/portfolioDSC106/assets/img/IMG_1670.jpg",
-    "description": "Match outcome prediction combining ELO ratings with XGBoost and Random Forests."
+    "description": "Match outcome prediction combining ELO ratings with XGBoost and Random Forests.",
+    "url": "https://github.com/k-shiroma-code/CSUF-REU-Football-Analytics"
   }
 ]

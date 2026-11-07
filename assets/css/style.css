@@ -596,3 +596,16 @@ dl.info[hidden]:not(:hover, :focus-within) {
   dl.stats dd { font-size: 1.15rem; }
   dl.stats dd small { display: inline; }
 }
+
+/* Lab 7, Step 7: link to the live project */
+.projects .project-url {
+  display: inline-block;
+  margin-top: 0.4em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.projects .project-url:hover {
+  text-decoration: underline;
+}

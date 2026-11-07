@@ -21,7 +21,8 @@ function renderProjectList(projectsGiven) {
     if (!tlCard) return;
 
     article.classList.add('has-details');
-    article.addEventListener('click', () => {
+    article.addEventListener('click', (event) => {
+      if (event.target.closest('a')) return; // let "View project" links just open
       tlCard.click();
       document.querySelector('.timeline-wrap').scrollIntoView({ behavior: 'smooth' });
     });
