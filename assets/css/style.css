@@ -500,14 +500,26 @@ dl.stats abbr {
   display: none;
 }
 
+/* Lab 8, Step 1.4: positions and sizes are CSS properties, so changes animate.
+   Bigger dots take longer to grow, so every dot grows at the same speed. */
 #chart circle {
+  r: calc(var(--r) * 1px);
   fill: var(--accent);
-  transition: 200ms;
+  fill-opacity: 0.7;
+  transition: all 300ms, r calc(var(--r) * 25ms) ease-out;
   transform-origin: center;
   transform-box: fill-box;
 }
 
+/* New dots grow in from nothing */
+@starting-style {
+  #chart circle {
+    r: 0;
+  }
+}
+
 #chart circle:hover {
+  fill-opacity: 1;
   transform: scale(1.5);
 }
 
@@ -595,6 +607,189 @@ dl.info[hidden]:not(:hover, :focus-within) {
 
   dl.stats dd { font-size: 1.15rem; }
   dl.stats dd small { display: inline; }
+}
+
+/* ----------------------------
+   Lab 8: time slider, scrollytelling, file unit visualization
+-----------------------------*/
+.commit-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin: 0 0 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.commit-filter input {
+  flex: 1;
+  min-width: 12rem;
+  accent-color: var(--accent);
+}
+
+.commit-filter time {
+  flex-basis: 100%; /* own line, so the changing date never moves the slider */
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+/* Step 3.1: story on the left, chart stuck in view on the right */
+#scrolly-1 {
+  display: flex;
+  gap: 3rem;
+}
+
+#scatter-story {
+  flex: 2;
+  position: relative;
+}
+
+#scatter-plot {
+  flex: 3;
+  position: sticky;
+  top: 8rem; /* below the sticky site header */
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+#scatter-plot #chart svg {
+  margin-top: 0;
+}
+
+#scatter-story .step {
+  padding: 1rem 0 1rem 1rem;
+  margin-bottom: 30vh;
+  border-left: 3px solid var(--surface-border);
+  color: var(--text-secondary);
+  transition: border-color 200ms, color 200ms;
+}
+
+#scatter-story .step:first-child {
+  margin-top: 20vh;
+}
+
+#scatter-story .step:last-child {
+  margin-bottom: 50vh;
+}
+
+#scatter-story .step.is-active {
+  border-left-color: var(--accent);
+  color: var(--text-primary);
+}
+
+#scatter-story .step-date {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+#scatter-story .step a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Step 2.1: file name | dots, lined up across all files with subgrid */
+.file-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9rem;
+}
+
+.file-legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.file-legend li::before {
+  content: '';
+  width: 0.75em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--color);
+}
+
+#files {
+  display: grid;
+  grid-template-columns: minmax(10em, 1fr) 4fr;
+  gap: 0.75rem 1rem;
+  margin: 0;
+}
+
+#files > div {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+#files dt {
+  grid-column: 1;
+  overflow-wrap: anywhere;
+}
+
+#files dt code {
+  color: var(--text-primary);
+}
+
+#files dt small {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Step 2.2: one dot per line */
+#files dd {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  align-content: start;
+  gap: 0.15em;
+  padding-top: 0.4em;
+  margin-left: 0;
+}
+
+.loc {
+  display: flex;
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: var(--color);
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  /* Chart pinned on top, story scrolls underneath */
+  #scrolly-1 {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  #scatter-plot {
+    order: -1;
+    top: 7.25rem; /* the phone header is taller */
+    padding-top: 0.5rem;
+    z-index: 1;
+    width: 100%;
+    background: var(--surface);
+  }
+
+  #scatter-plot #selection-count,
+  #scatter-plot #language-breakdown {
+    display: none;
+  }
+
+  #files {
+    grid-template-columns: 1fr;
+  }
+
+  #files dt,
+  #files dd {
+    grid-column: 1;
+  }
 }
 
 /* Lab 7, Step 7: link to the live project */
